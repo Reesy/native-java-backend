@@ -1,0 +1,28 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" 
+               destdir="build/classes" 
+               includeantruntime="false"  />
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/APIServer.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="backend.APIServer"/>
+            </manifest>
+            <fileset file="plugin.yml" />
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/APIServer.jar" fork="true"/>
+    </target>
+
+</project>
