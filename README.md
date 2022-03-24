@@ -11,7 +11,9 @@ By default the server runs on port 8001
 
 
 Compile: ```ant compile```
+
 Create JAR: ```ant jar``` 
+
 Running:   ```ant run```
 
 All-in-one: ```ant compile jar run```
